@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="RobotWeather">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Want to know if you should be driving those FRC and FTC robots? We know those robots hate bad weather.">
+    <meta name="author" content="David Sargent">
+    <!-- favicons -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" href="/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="/favicon-144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <!-- ****** faviconit.com favicons ****** -->
+
+    <title>Robot Weather</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-bolt"></i>  <span class="light">Robot</span> Weather
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#weather">Weather</a>
+                    </li>
+                    <!--<li>-->
+                        <!--<a class="page-scroll" href="#download">Download</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a class="page-scroll" href="#contact">Contact</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Robot Weather</h1>
+                        <h2>Something new, yet so old.</h2>
+                        <p class="intro-text">We all know what 1+1 is, but we didn't need IoT for that. Some places are
+                            just too dry to drive, while others are perfect.</p>
+                        <p class="intro-text">This is what we imagine <a href="https://twitter.com/search?q=%23imaginethiscontest%20lang%3Aen">#imaginethiscontest</a></p>
+                        <a href="#weather" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="weather" class="container content-section text-center" ng-controller="IotData">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <!--<h2>About Grayscale</h2>-->
+                <!--<p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>-->
+                <!--<p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>-->
+                <!--<p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>-->
+                <h1>Here it comes :)</h1>
+                <div ng-show="loading">
+                    <h1>Loading... Wait a moment or two</h1>
+                    <i class="fa fa-3x fa-align-center fa-circle-o-notch fa-spin"></i>
+                </div>
+                <div ng-hide="loading">
+                    <h1>Weather</h1>
+                    <!-- todo: Jessie -->
+                    <p>Is something</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; 2016 Team Clutch Robotics. Photo Credits <a href="http://gratisography.com/">Gratisography</a></p>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- Custom T-->
+    <script src="js/grayscale.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script>
+    var app =  angular.module('RobotWeather', [])
+            .controller('IotData', ["$scope", function ($scope) {
+                $scope.loading = true;
+                $scope.temp = "";
+                $scope.humidity = "";
+                $scope.pressure = "";
+
+                var load = function () {
+                    var send = {
+                        type: 'all'
+                    };
+                    $.post('/php/api.php', angular.toJson(send))
+                            .done(function (data) {
+                                if (data == null) {
+                                    console.log("Server Failed Error 1")
+                                }
+
+                                var reply = angular.fromJson(data);
+                                console.log(reply);
+                                if (reply.status) {
+                                    $scope.temp = reply.temp;
+                                    $scope.humidity = reply.humi;
+                                    $scope.pressure = reply.pres;
+
+                                    drawConclusions();
+                                } else {
+                                    console.log(reply.error);
+                                    alert(reply.error);
+                                    failure();
+                                }
+
+                                $scope.loading = false;
+                                $scope.$apply();
+                            })
+                            .fail(function () {
+                                failure();
+                            });
+
+                };
+
+                var drawConclusions = function() {
+                    console.log("Drawing conclusions...");
+                    // todo: Jessie
+                };
+
+                var failure = function() {
+                  console.error('Failure');
+                };
+
+                load();
+            }]);
+</script>
+</body>
+
+</html>
